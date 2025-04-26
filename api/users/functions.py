@@ -2,7 +2,7 @@
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .responses import ResponseTemplates
+from api.responses import ResponseTemplates
 
 from .schemas import UserSchemas
 

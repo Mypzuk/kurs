@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from typing import TypeVar, Generic, Optional
-from fastapi import HTTPException
 
 # Определяем общий тип данных для ответа
 T = TypeVar('T')
@@ -23,18 +22,5 @@ class ResponseTemplates:
             data=data
         )
 
-    @staticmethod
-    def user_already_exists(message: str = "This user is already registered"):
-        raise HTTPException(
-            status_code=404,
-            detail={"message": message}
-        )
 
 
-
-    @staticmethod
-    def not_found(message: str = f"User not found"):
-        raise HTTPException(
-            status_code=404,
-            detail={"message": message}
-        )

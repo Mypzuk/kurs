@@ -28,7 +28,6 @@ class Competitions(Base):
     type = Column(String, nullable=False)
     password = Column(String)
     video_instruction = Column(String, nullable=False)
-    coefficient = Column(Float, nullable=False)
     start_date = Column(Date, nullable=False)
     end_date = Column(Date, nullable=False)
     status = Column(String(20), nullable=False)

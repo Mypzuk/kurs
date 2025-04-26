@@ -8,6 +8,7 @@ from core.models import Base
 from core.config import settings
 
 from api.users.views import router as user_router
+from api.competitions.views import router as competitions_router
 
 
 @asynccontextmanager
@@ -23,6 +24,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 app.include_router(user_router, prefix=settings.api_prefix)
+app.include_router(competitions_router, prefix=settings.api_prefix)
+
 
 
 if __name__ == "__main__":
