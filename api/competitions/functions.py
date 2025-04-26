@@ -18,7 +18,7 @@ async def get_competitions(session):
     stmt = select(Competitions).order_by(Competitions.competition_id)
     result = await session.execute(stmt)
     competitions = result.scalars().all()
-    competition_schemas = [CompetitionSchemas.model_validate(user) for user in competitions]
+    competition_schemas = [CompetitionSchemas.model_validate(competition) for competition in competitions]
     return ResponseTemplates.success(data=competition_schemas)
 
 

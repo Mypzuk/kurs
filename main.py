@@ -9,6 +9,7 @@ from core.config import settings
 
 from api.users.views import router as user_router
 from api.competitions.views import router as competitions_router
+from api.results.views import router as results_router
 
 
 @asynccontextmanager
@@ -25,6 +26,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(user_router, prefix=settings.api_prefix)
 app.include_router(competitions_router, prefix=settings.api_prefix)
+app.include_router(results_router, prefix=settings.api_prefix)
 
 
 

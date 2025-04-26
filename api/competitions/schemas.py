@@ -3,7 +3,7 @@ from datetime import date
 from pydantic import BaseModel
 
 class Competition(BaseModel):
-    id: int
+    competition_id: int
 
 
 class CompetitionCreate(BaseModel):
@@ -20,6 +20,6 @@ class CompetitionCreate(BaseModel):
 
 
 class CompetitionSchemas(CompetitionCreate):
-    id: int
+    competition_id: int
     class Config:
         from_attributes = True
