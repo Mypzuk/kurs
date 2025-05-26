@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import TypeVar, Generic, Optional
 
 # Определяем общий тип данных для ответа
-T = TypeVar('T')
+T = TypeVar("T")
 
 
 # Базовая модель ответа
@@ -16,11 +16,4 @@ class APIResponse(BaseModel, Generic[T]):
 class ResponseTemplates:
     @staticmethod
     def success(data: Optional[T] = None, message: str = "Operation successful"):
-        return APIResponse(
-            status="success",
-            message=message,
-            data=data
-        )
-
-
-
+        return APIResponse(status="success", message=message, data=data)

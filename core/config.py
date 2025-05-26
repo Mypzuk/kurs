@@ -1,16 +1,13 @@
-import os
-from dotenv import load_dotenv
-
-
+from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from pydantic import BaseModel
 
+BASE_DIR = Path(__file__).parent.parent
 
-load_dotenv()
 
 class DatabaseConfig(BaseModel):
-    url: str = os.getenv("URL_DB")
+    url: str = f"sqlite+aiosqlite:///{BASE_DIR}/OSport.sqlite3"
     echo: bool = False
     echo_pool: bool = False
 
