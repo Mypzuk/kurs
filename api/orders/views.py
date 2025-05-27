@@ -13,7 +13,7 @@ router = APIRouter(tags=["Orders 🎯"])
 async def get_order(order: OrderSchemas = Depends(dependencies.check_order_id)):
     return order
 
-@router.get("/orderts")
+@router.get("/orders")
 async def get_orders(session: AsyncSession = Depends(db_helper.session_getter)):
     return await func.get_orders(session=session)
 
